@@ -42,20 +42,23 @@ class Airplane {
   */
   
 class Person {
-  constructor(name, age) {
+  constructor (name, age) {
     this.name = name;
     this.age = age;
     this.stomach = [];
   }
-  eat(food) {
+
+  eat (food) {
     if (this.stomach.length < 10) {
       this.stomach.push(food)
     }
   }
-  poop() {
+
+  poop () {
     this.stomach = [];
   }
-  toString() {
+
+  toString () {
     return `${this.name}, ${this.age}`
   }
 }
@@ -81,10 +84,12 @@ class Car {
     this.tank = 0;
     this.odometer = 0;
   }
-  fill(gallons) {
+
+  fill (gallons) {
     this.tank += gallons;
   }
-  drive(distance) {
+
+  drive (distance) {
     if (this.tank > 0 && distance <= this.tank * this.milesPerGallon) {
       this.odometer += distance;
       this.tank -= distance / this.milesPerGallon;
@@ -116,7 +121,8 @@ class Lambdasian {
     this.age = obj.age;
     this.location = obj.location;
   }
-  speak() {
+
+  speak () {
     return `Hello my name is ${this.name}, I am from ${this.location}`
   }
 }
@@ -142,10 +148,12 @@ class Instructor extends Lambdasian {
     this.favLanguage = obj.favLanguage;
     this.catchPhrase = obj.catchPhrase;
   }
-  demo(subject) {
+
+  demo (subject) {
     return `Today we are learning about ${subject}`
   }
-  grade(student,subject) {
+
+  grade (student, subject) {
     return `${student.name} receives a perfect score on ${subject}`
   }
 }
@@ -165,19 +173,22 @@ class Instructor extends Lambdasian {
           + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
   */
 class Student extends Lambdasian {
-  constructor(obj) {
+  constructor (obj) {
     super(obj);
     this.previousBackground = obj.previousBackground;
     this.className = obj.className;
     this.favSubjects = obj.favSubjects;
   }
-  listSubjects() {
+
+  listSubjects () {
     return `Loving ${this.favSubjects.join(', ')}!`
   }
-  PRAssignment(subject) {
+
+  PRAssignment (subject) {
     return `${this.name} has submitted a PR for ${subject}`
   }
-  sprintChallenge(subject) {
+
+  sprintChallenge (subject) {
     return `${this.name} has begun sprint challenge on ${subject}`
   }
 }
@@ -201,10 +212,12 @@ class ProjectManager extends Instructor {
     this.gradClassName = obj.gradClassName;
     this.favInstructor = obj.favInstructor;
   }
-  standUp(channel) {
+
+  standUp (channel) {
     return `${this.name} announces to ${channel}, @channel standy times!`
   }
-  debugsCode(student, subject) {
+
+  debugsCode (student, subject) {
     return `${this.name} debugs ${student.name}'s code on ${subject}`
   }
 }
